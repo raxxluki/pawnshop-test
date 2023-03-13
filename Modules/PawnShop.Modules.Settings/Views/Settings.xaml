@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="PawnShop.Modules.Settings.Views.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:coreRegions="clr-namespace:PawnShop.Core.Regions;assembly=PawnShop.Core"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <GroupBox Margin="10,0,10,0" Header="Ustawienia">
+        <TabControl
+            Margin="0,3,0,0"
+            prism:RegionManager.RegionName="{x:Static coreRegions:RegionNames.SettingsTabControlRegion}"
+            Style="{DynamicResource MahApps.Styles.TabControl.Animated}" />
+    </GroupBox>
+</UserControl>

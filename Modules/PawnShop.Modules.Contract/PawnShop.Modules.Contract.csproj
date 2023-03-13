@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<AssemblyName>PawnShop.Modules.Contract</AssemblyName>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="11.0.0" />
+		<PackageReference Include="FluentValidation" Version="10.3.6" />
+		<PackageReference Include="MaterialMessageBox" Version="4.0.2" />
+		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\PawnShop.Business\PawnShop.Business.csproj" />
+		<ProjectReference Include="..\..\PawnShop.Controls\PawnShop.Controls.csproj" />
+		<ProjectReference Include="..\..\PawnShop.Core\PawnShop.Core.csproj" />
+		<ProjectReference Include="..\..\PawnShop.Exceptions\PawnShop.Exceptions.csproj" />
+		<ProjectReference Include="..\..\PawnShop.Services\PawnShop.Services.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Converters\" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>PawnShop.Modules.Worker</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MenuItem\" />
+    <Folder Include="RegionContext\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PawnShop.Controls\PawnShop.Controls.csproj" />
+    <ProjectReference Include="..\..\PawnShop.Core\PawnShop.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Styles\PasswordBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

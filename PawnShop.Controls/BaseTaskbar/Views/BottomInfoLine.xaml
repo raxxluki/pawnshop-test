@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="PawnShop.Controls.BaseTaskbar.Views.BottomInfoLine"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <Grid Margin="8">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Time  -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal">
+
+            <TextBlock Margin="5,0,0,0" Text="{Binding ActualDateTime, StringFormat={}{0:dd/MM/yyyy HH:mm}}" />
+        </StackPanel>
+
+        <!--  User  -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <TextBlock Text="Uzytkownik:" />
+            <TextBlock Margin="5,0,0,0" Text="{Binding FullName}" />
+        </StackPanel>
+
+        <!--  Cash  -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <TextBlock Text="Stan kasy:" />
+            <TextBlock Margin="5,0,5,0" Text="{Binding SessionContext.TodayMoneyBalance.MoneyBalance1}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

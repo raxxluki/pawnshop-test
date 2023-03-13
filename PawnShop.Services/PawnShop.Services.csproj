@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UserSecretsId>3b19dbe3-f8b4-44da-a38c-56fbe885e7a2</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="itext7" Version="7.2.0" />
+    <PackageReference Include="MaterialMessageBox" Version="4.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PawnShop.Business\PawnShop.Business.csproj" />
+    <ProjectReference Include="..\PawnShop.Core\PawnShop.Core.csproj" />
+    <ProjectReference Include="..\PawnShop.DataAccess\PawnShop.DataAccess.csproj" />
+    <ProjectReference Include="..\PawnShop.Exceptions\PawnShop.Exceptions.csproj" />
+  </ItemGroup>
+
+</Project>

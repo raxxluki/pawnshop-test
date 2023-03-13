@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>PawnShop.Modules.Home</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.80" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PawnShop.Controls\PawnShop.Controls.csproj" />
+    <ProjectReference Include="..\..\PawnShop.Core\PawnShop.Core.csproj" />
+    <ProjectReference Include="..\PawnShop.Modules.Login\PawnShop.Modules.Login.csproj" />
+  </ItemGroup>
+</Project>

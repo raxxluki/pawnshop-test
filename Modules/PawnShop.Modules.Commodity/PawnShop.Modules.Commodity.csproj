@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>PawnShop.Modules.Commodity</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MenuItem\" />
+    <Folder Include="Base\" />
+    <Folder Include="Events\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PawnShop.Controls\PawnShop.Controls.csproj" />
+    <ProjectReference Include="..\..\PawnShop.Core\PawnShop.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="TaskBar\CommodityTaskBar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="TaskBar\CommodityTaskBar.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

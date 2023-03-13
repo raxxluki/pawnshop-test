@@ -1,0 +1,54 @@
+﻿<mah:MetroWindow
+    x:Class="PawnShop.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:coreRegions="clr-namespace:PawnShop.Core.Regions;assembly=PawnShop.Core"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="{Binding Title}"
+    MinWidth="1280"
+    MinHeight="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized" Icon="/Icons/PawnshopIcon.ico">
+
+    <Window.Resources>
+        <Style BasedOn="{StaticResource MahApps.Styles.TextBlock}" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        </Style>
+    </Window.Resources>
+
+    <DockPanel LastChildFill="True">
+        <!--  Top Taskbar  -->
+        <ContentControl prism:RegionManager.RegionName="{x:Static coreRegions:RegionNames.TopTaskBarRegion}" DockPanel.Dock="Top" />
+
+        <!--  Bottom info line  -->
+        <ContentControl prism:RegionManager.RegionName="{x:Static coreRegions:RegionNames.BottomInfoLineRegion}" DockPanel.Dock="Bottom" />
+
+        <!--  Menu  -->
+        <mah:HamburgerMenu
+            CompactPaneLength="50"
+            DockPanel.Dock="Left"
+            IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay}"
+            ItemTemplate="{StaticResource MenuItemTemplate}"
+            OpenPaneLength="150"
+            OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+            SelectedIndex="0"
+            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+            Style="{StaticResource MahApps.Styles.HamburgerMenu.Ripple}">
+
+            <!--  Menu items  -->
+            <mah:HamburgerMenu.ItemsSource>
+                <mah:HamburgerMenuItemCollection x:Name="HamburgerMenuItemCollection" prism:RegionManager.RegionName="{x:Static coreRegions:RegionNames.MenuRegion}" />
+            </mah:HamburgerMenu.ItemsSource>
+
+            <mah:HamburgerMenu.Content>
+                <Grid>
+                    <!--  Main Content  -->
+
+                    <ContentControl x:Name="ContentRegionControl" prism:RegionManager.RegionName="{x:Static coreRegions:RegionNames.ContentRegion}" />
+                </Grid>
+            </mah:HamburgerMenu.Content>
+        </mah:HamburgerMenu>
+    </DockPanel>
+</mah:MetroWindow>

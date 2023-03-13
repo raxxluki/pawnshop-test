@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>PawnShop</AssemblyName>
+    <UserSecretsId>a35924ef-7185-4373-9104-ffef1b6a7636</UserSecretsId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Icons\PawnshopIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Client\PawnShop.Modules.Client.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Commodity\PawnShop.Modules.Commodity.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Contract\PawnShop.Modules.Contract.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Home\PawnShop.Modules.Home.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Login\PawnShop.Modules.Login.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Sale\PawnShop.Modules.Sale.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Settings\PawnShop.Modules.Settings.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Worker\PawnShop.Modules.Worker.csproj" />
+    <ProjectReference Include="..\..\PawnShop.Controls\PawnShop.Controls.csproj" />
+    <ProjectReference Include="..\..\PawnShop.Core\PawnShop.Core.csproj" />
+    <ProjectReference Include="..\..\Modules\PawnShop.Modules.Home\PawnShop.Modules.Home.csproj" />
+    <ProjectReference Include="..\..\PawnShop.Services\PawnShop.Services.csproj" />
+    <ProjectReference Include="..\..\Pawnshop.Setup.Scripts\Pawnshop.Setup.Scripts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\PawnshopIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
